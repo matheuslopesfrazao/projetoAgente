@@ -23,9 +23,9 @@ public class AgenteLabirinto {
 //		this.movimento = MovimentosAgenteLabirinto.CIMA;
 	}
 	
-	private MovimentosAgenteLabirinto observar() {
+	private MovimentosAgenteLabirinto observar() {//Método que observa se pode se movimentar, caso esteja na parede não vai entrar em nenhum dos ifs abaixo
 		PosicaoXY posicao = new PosicaoXY();
-				if(this.getPosicao().getPosY()-1 >=0) {
+				if(this.getPosicao().getPosY()-1 >=0) {//Se possível se movimenta pra esquerda
 					posicao.setPosX(this.getPosicao().getPosX());
 					posicao.setPosY(this.getPosicao().getPosY()-1);
 					if(this.labirinto.retornarValorPosicaoLabirinto(posicao) =="S") {
@@ -68,7 +68,7 @@ public class AgenteLabirinto {
 			 movimento = movimentoAleatorio();
 		}
 		
-		if(movimento!=null) {//Reazliza um movimento para posição ao redor
+		if(movimento!=null) {//Realiza um movimento para posição ao redor
 			PosicaoXY proximoMovimento = retornarMovimento();
 			this.labirinto.limpar();
 			this.posXY = proximoMovimento;}
