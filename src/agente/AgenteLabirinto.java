@@ -17,15 +17,14 @@ public class AgenteLabirinto {
 
 	public AgenteLabirinto(Labirinto labirinto) {
 		this.labirinto = labirinto;
-		labirinto.setAgente(this);
+		labirinto.setAgente(this);//?
 		this.posXY = new PosicaoXY(0,0);
-		this.movimento=MovimentosAgenteLabirinto.DIREITA;
-//		this.movimento = MovimentosAgenteLabirinto.CIMA;
+		this.movimento=MovimentosAgenteLabirinto.DIREITA;//Primeiro movimento do agente
 	}
 	
 	private MovimentosAgenteLabirinto observar() {//Método que observa se pode se movimentar, caso esteja na parede não vai entrar em nenhum dos ifs abaixo
 		PosicaoXY posicao = new PosicaoXY();
-				if(this.getPosicao().getPosY()-1 >=0) {//Se possível se movimenta pra esquerda
+				if(this.getPosicao().getPosY()-1 >=0) {//Verifica se pode se movimentar pra esquerda
 					posicao.setPosX(this.getPosicao().getPosX());
 					posicao.setPosY(this.getPosicao().getPosY()-1);
 					if(this.labirinto.retornarValorPosicaoLabirinto(posicao) =="S") {
@@ -33,7 +32,7 @@ public class AgenteLabirinto {
 					}
 				}
 				
-				if(this.getPosicao().getPosX()-1 >= 0) {
+				if(this.getPosicao().getPosX()-1 >= 0) {//Verifica se pode se movimentar pra cima
 					posicao.setPosX(this.getPosicao().getPosX()-1);
 					posicao.setPosY(this.getPosicao().getPosY());
 					if(this.labirinto.retornarValorPosicaoLabirinto(posicao) =="S") {
@@ -41,7 +40,7 @@ public class AgenteLabirinto {
 					}
 				}
 				
-				if (this.getPosicao().getPosY()+1 < this.labirinto.getTamanhoLabirinto()) {
+				if (this.getPosicao().getPosY()+1 < this.labirinto.getTamanhoLabirinto()) {//Verifica se pode se movimentar pra direita
 					posicao.setPosX(this.getPosicao().getPosX());
 					posicao.setPosY(this.getPosicao().getPosY()+1);
 					if(this.labirinto.retornarValorPosicaoLabirinto(posicao) =="S") {
@@ -49,7 +48,7 @@ public class AgenteLabirinto {
 					}
 				}
 				
-				if (this.getPosicao().getPosX()+1 < this.labirinto.getTamanhoLabirinto()) {
+				if (this.getPosicao().getPosX()+1 < this.labirinto.getTamanhoLabirinto()) {//Verifica se pode se movimentar pra baixo
 					posicao.setPosX(this.getPosicao().getPosX()+1);
 					posicao.setPosY(this.getPosicao().getPosY());
 					if(this.labirinto.retornarValorPosicaoLabirinto(posicao) =="S"){
