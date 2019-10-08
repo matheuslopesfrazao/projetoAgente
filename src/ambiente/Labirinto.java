@@ -4,6 +4,7 @@ import java.util.Random;
 
 import agente.AgenteLabirinto;
 import geral.PosicaoXY;
+import principal.InteligencaArtificial;
 
 
 public class Labirinto {
@@ -35,7 +36,7 @@ public class Labirinto {
 		}
 	}
 	
-	public void exibirLabirinto() {
+	public void exibirLabirinto() {		
 		atualizarPosicaoAgente();
 		for (int i = 0; i < tamanhoLabirinto; i++) {
 			for (int j = 0; j < tamanhoLabirinto; j++) {
